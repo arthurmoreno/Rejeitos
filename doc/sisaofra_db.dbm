@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+CAUTION: Do not modify this file unless you know what you are doing.
+         Unexpected results may occur if the code is changed deliberately.
+-->
+<dbmodel pgmodeler-ver="0.7.0">
+<database name="sisaofra" encoding="UTF8" lc-collate="Portuguese_Brazil" lc-ctype="Portuguese_Brazil">
+	<role name="postgres"/>
+	<tablespace name="pg_default"/>
+</database>
+
+<schema name="public" protected="true" rect-visible="true" fill-color="#e1e1e1" sql-disabled="true">
+</schema>
+
+<sequence name="taxa_dose_id_seq"
+	 start="1" increment="1"
+	 min-value="1" max-value="9223372036854775807"
+	 cache="1" cycle="false">
+	<schema name="public"/>
+	<role name="postgres"/>
+</sequence>
+
+<table name="taxa_dose">
+	<schema name="public"/>
+	<role name="postgres"/>
+	<position x="60" y="60"/>
+	<column name="id" not-null="true" default-value="nextval('taxa_dose_id_seq'::regclass)">
+		<type name="integer"/>
+	</column>
+	<column name="taxa">
+		<type name="real"/>
+	</column>
+	<constraint name="taxa_dose_pkey" type="pk-constr" factor="100" table="public.taxa_dose">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+<table name="fonte">
+	<schema name="public"/>
+	<position x="340" y="60"/>
+	<column name="id">
+		<type name="serial"/>
+	</column>
+	<column name="identificador">
+		<type name="varchar" length="20"/>
+	</column>
+	<column name="taxa_dose">
+		<type name="real"/>
+	</column>
+	<column name="x">
+		<type name="smallint"/>
+	</column>
+	<column name="y">
+		<type name="smallint"/>
+	</column>
+	<constraint name="id_fonte" type="pk-constr" factor="10" table="public.fonte">
+		<columns names="id" ref-type="src-columns"/>
+	</constraint>
+</table>
+
+</dbmodel>

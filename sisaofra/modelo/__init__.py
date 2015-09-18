@@ -1,0 +1,1 @@
+"""Classes fundamentais para o AG"""

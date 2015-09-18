@@ -1,0 +1,3 @@
+Matplotlib - http://matplotlib.sourceforge.net
+	numpy, dateutil, pytz, pyparsing, six
+Psycopg

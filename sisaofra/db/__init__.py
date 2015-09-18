@@ -1,0 +1,1 @@
+"""Pacote responsavel pelo acesso ao banco de dados."""
